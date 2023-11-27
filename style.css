@@ -1,0 +1,386 @@
+* {
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Body */
+
+body {
+    background-color: #FCEDDA;
+    margin: 0;
+}
+
+/* Dark Mode Button */
+#darkModeLabel {
+    display: block;
+    position: relative;
+    width: 4rem;
+    height: 3rem;
+    margin-left: 3rem;
+    background: #eaeaea;
+    border-radius: 50%;
+    border: 2px solid #EE4E34;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#darkModeLabel:after {
+    content: "";
+    width: 2rem;
+    height: 2.4rem;
+    position: absolute;
+    top: 3px;
+    background: linear-gradient(180deg, #ee4e34, #f4d409);
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+#darkModeToggle {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+#darkModeToggle:checked + #darkModeLabel {
+    background: #494949;
+    border: 2px solid #494949;
+}
+
+#darkModeToggle:checked + #darkModeLabel:after {
+    left: -0.2rem;
+    transform: translateX(100%);
+}
+
+
+
+/* Top Navigation */
+
+.topnav ul {
+    display: flex;
+    justify-content: center; 
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;  
+    background-color: #EE4E34;
+    width: 100%;
+}
+
+.topnav a {
+    display: flex;
+    color: aliceblue;
+    text-align: center;
+    padding: 1.4rem 1rem;
+    text-decoration: none;
+    font-size: 1rem;
+    border-right: 1px solid rgb(0, 0, 0);
+    border-left: 1px solid rgb(0, 0, 0);
+    transition: transform .2s;
+}
+
+.topnav a:hover {
+    background-color: #FCEDDA;
+    color: black;
+    transform: scale(1.1);
+}
+
+.topnav a.active {
+    background-color: #d25642;
+    color: white;
+  }
+
+/* Body Content  */
+
+.body-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Section One */
+
+.section-one {
+    display: flex;
+    justify-content:center;
+}
+
+h1 {
+    margin: 0;
+}
+
+#profile-picture {
+    width: 400px;
+    margin-top: 4rem;
+    margin-right: 4rem;
+    border-radius: 10%;
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#aboutme {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    border-radius: 10%;
+}
+
+.text-section {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 30%;
+    margin-top: 3.4rem;
+    margin-left: 2rem;
+    line-height: 1.6;
+}
+
+.text-section-portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 3.4rem;
+    margin-left: 2rem;
+    line-height: 1.6;
+}
+
+.aboutme {
+    max-width: 40%;
+}
+
+/* Other Styling */
+
+.numbers {
+    font-weight: bold;
+}
+
+.role {
+    padding-left: 1rem;
+}
+
+#homepage .text-section p {
+    text-align: left;
+}
+
+#aboutMeText {
+    text-align: left; 
+}
+
+.header-text a {
+    text-decoration: none;
+    color: black;
+}
+
+.header-text a:hover {
+    color: #d25642;
+}
+
+/* Styling On The Fetched JSON Text */
+
+.company-0, .company-1, .company-2, .company-3, .company-4, .company-5 {
+    font-size: 0.9rem;
+    color: rgb(96, 95, 95);
+    text-align: center;
+}
+
+.year-0, .year-1, .year-2, .year-3, .year-4, .year-5 {
+    color: grey;
+}
+
+.title-0, .title-1, .title-2, .title-3, .title-4, .title-5 {
+    font-weight: bold;
+}
+
+.experience-list {
+    max-width: 50%;
+}
+
+/* Section Two */
+
+.projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 15rem;
+}
+
+.portfolio {
+    margin:0;
+}
+
+.projects h4, p {
+    text-align: center;
+}
+
+
+.projects a {
+    text-decoration: none;
+    color: black;
+
+}
+
+.projects a:hover {
+    color: #d25642;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Styling Of Cards */
+
+[class^="pic"] {
+    width: 300px;
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    border-radius: 10%;
+}
+
+[class^="pic"]:hover {
+    opacity: 0.3;
+}
+
+[class^="project"] {
+    margin-left: 2rem;
+}
+
+/* Modal Window Styling - Denna kod är tagen från en annan sida */
+#myModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  #modalContent {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 800px;
+    height: 80%;
+    max-height: 800px;
+    overflow: auto;
+  }
+
+  #closeModal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+/* Slut här */
+
+#modalIframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Contact Form */
+
+input[type=text], select, textarea {
+    width: 100%; 
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    margin-top: 6px; 
+    margin-bottom: 16px; 
+    resize: vertical 
+  }
+  
+  input[type=submit] {
+    background-color: #EE4E34;;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #d25642;
+  }
+  
+  .container {
+    border-radius: 5px;
+    margin-top: 2rem;
+  }
+
+
+/* Footer */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+    background-color: #EE4E34;
+    color: white; 
+    text-align: center;
+}
+
+footer img {
+    width:35px;
+    margin-top: 0.7rem;
+    margin-left: 1rem;
+    opacity: 1;
+    transition: .5s ease;
+}
+
+#linkedin_logo:hover {
+    opacity: 0.6;
+}
+
+#github_logo:hover {
+    opacity: 0.6;
+}
+
+#email_logo:hover {
+    opacity: 0.6;
+}
+
+/* Responsive Code */
+
+  @media screen and (max-width: 700px) {
+    .topnav li, 
+    .topnav li {float: none;
+    }
+    .topnav a {
+        font-size: 1.15rem;
+    }
+    .profile-text {margin-top: 180px;}
+    .text-section {text-align: center;}
+    .experience-list {text-align: left;}
+    .text-section p {text-align: center;}
+    h4 {font-size: large;}
+
+    .image-section {margin-left: 6rem;}
+
+    #profile-picture {
+    width: 350px;
+    border-radius: 50%;
+    margin-left: 1rem;
+    }
+    .section-one {flex-direction: column;
+    align-items: center;
+    }
+    .text-section {max-width: 50%;}
+
+    .projects {margin-top: 2rem;}
+    .pic1, .pic2, .pic3, .pic4, .pic5, .pic6 {
+        width: 200px;}
+    .projects a {font-size: large;}
+}

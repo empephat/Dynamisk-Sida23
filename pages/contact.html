@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Let's talk music.">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <script src="../main.js" defer></script>
+    <title>Let's get in touch</title>
+</head>
+<body>
+
+    <header>
+        
+        <nav class="topnav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../pages/about.html">About Me</a></li>
+                <li><a href="../pages/portfolio.html">Portfolio</a></li>
+                <li><a class="active" href="../pages/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+<main class="body-content">
+    <input type="checkbox" id="darkModeToggle">
+    <label id="darkModeLabel" for="darkModeToggle"></label>
+     <div class="section-one">
+        <section class="text-section">
+                <div class="header-text">
+                    <h1>Let's Talk!</h1>
+                    <div class="container">
+                        <form action="#">
+                      
+                          <label for="fname">First Name</label>
+                          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                      
+                          <label for="lname">Last Name</label>
+                          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                      
+                          <label for="country">Country</label>
+                          <select id="country" name="country">
+                            <option value="sweden">Sweden</option>
+                            <option value="unitedkingdom">United Kingdom</option>
+                            <option value="usa">USA</option>
+                          </select>
+                      
+                          <label for="subject">Subject</label>
+                          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                      
+                          <input type="submit" value="Submit">
+                      
+                        </form>
+                      </div>
+                </div>
+        </section>
+     </div>
+</main>
+<footer>
+    <a href="http://linkedin.com" target="_blank"><img id="linkedin_logo" src="../images/linkedin_icon.svg" alt="Linkedin"></a>
+    <a href="http://github.com" target="_blank"><img id="github_logo" src="../images/github_icon.svg" alt="GitHub"></a>      
+    <a href="mailto:info@aymill.com" target="_blank"><img id="email_logo" src="../images/email_logo.svg" alt="Email"></a>
+</footer>
+  
+</body>
+</html>
