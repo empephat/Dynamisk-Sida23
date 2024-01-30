@@ -26,6 +26,13 @@ darkModeToggle.addEventListener("click", function() {
     localStorage.removeItem("darkModeEnabled");
     }
    
+    gtag('event', 'button_click', {
+    'category': 'darkmode',
+    'value': 1
+    });
+
+
+
 });
 
 // Låter darkmode vara på om det är ikryssat av användaren
